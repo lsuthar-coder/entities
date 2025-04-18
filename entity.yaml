@@ -1,0 +1,75 @@
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: examples
+spec:
+  owner: guests
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: example-website
+  annotations:
+    feedback/type: 'JIRA'
+    feedback/email-to: 'Leeladharsuthar80@gmail.com'
+    feedback/host: 'https://jirauat.ops.expertcity.com'
+    jira/project-key: 'DX'
+spec:
+  type: website
+  lifecycle: experimental
+  owner: guests
+  system: examples
+  providesApis: [example-grpc-api]
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: example-grpc-api
+  annotations:
+    feedback/type: 'JIRA'
+    feedback/email-to: 
+     - 'Leeladharsuthar80@gmail.com'
+     - 'Lldhrsuthar@gmail.com'
+    feedback/host: 'https://jirauat.ops.expertcity.com'
+    jira/project-key: 'DS'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests
+  system: examples
+  definition: |
+    syntax = "proto3";
+
+    service Exampler {
+      rpc Example (ExampleMessage) returns (ExampleMessage) {};
+    }
+
+    message ExampleMessage {
+      string example = 1;
+    };
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test-bitbucket
+  title: Memebootplus V2
+  description: "Test service in Nucleus V2 Framework"
+  annotations:
+    jira/project-key: DEVPLTF
+    backstage.io/techdocs-ref: dir:./sub
+    goto.com/team: Nucleus
+    goto.com/project: NucleusV2
+    
+    
+  tags:
+    - ucc-nucleus
+spec:
+  type: service
+  owner: nucleus-dev
+  lifecycle: experimental
+
+---
