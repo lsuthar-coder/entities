@@ -31,9 +31,7 @@ metadata:
   name: example-grpc-api
   annotations:
     feedback/type: 'JIRA'
-    feedback/email-to: 
-     - 'Leeladharsuthar80@gmail.com'
-     - 'Lldhrsuthar@gmail.com'
+    feedback/email-to: 'Leeladharsuthar80@gmail.com'
     feedback/host: 'https://jirauat.ops.expertcity.com'
     jira/project-key: 'DS'
 spec:
