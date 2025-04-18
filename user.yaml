@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: leeladhar.suthar
+spec:
+  profile:
+    email: leeladhar.suthar@goto.com
+    displayName: Leeladhar Suthar
+  memberOf: [DOIS]  # This links the user to the "guests" group.
